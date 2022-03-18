@@ -1,9 +1,54 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
     "jsx-quotes": [
       "error",
       "prefer-single"
+    ],
+    "indent": [
+      "error",
+      "tab"
+    ],
+    "space-before-function-paren": [
+      "error",
+      "always"
+    ],
+    "space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "never"
     ]
   }
 }
