@@ -49,6 +49,16 @@
     "array-bracket-spacing": [
       "error",
       "never"
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false
+      }
     ]
   }
 }
