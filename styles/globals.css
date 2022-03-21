@@ -7,10 +7,17 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: #97C4C4;
+  background: rgb(34,252,246);
+  background: radial-gradient(circle, rgba(34,252,246,1) 10%, rgba(0,212,255,1) 100%);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:root {
+  --primary: #39EDF6;
+  --secundary: #0FE2EC;
+  --shadow: #1799A01A;
 }
