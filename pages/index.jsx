@@ -1,9 +1,10 @@
+import PageLayout from 'components/PageLayout'
 import styles from 'styles/Home.module.css'
 
 export default function Home () {
 	return (
-		<div className={styles.container}>
-			<h1>Turnos App</h1>
-		</div>
+		<PageLayout style={styles.container}>
+			<h1>Select a view to continue</h1>
+		</PageLayout>
 	)
 }
