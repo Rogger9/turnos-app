@@ -1,0 +1,16 @@
+.btn {
+  padding: .6rem 2rem;
+  border-radius: .6rem;
+  box-shadow: 0 -2px 12px var(--shadow) inset;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: var(--secundary);
+  transition: background .1s ease-in;
+}
+
+.btn:active {
+  transform: scale(.98);
+  transition: transform .1s ease-in-out;
+}
