@@ -22,4 +22,10 @@ describe('Button', () => {
 		fireEvent.click(screen.getByText('button'))
 		expect(handleClick).toHaveBeenCalledTimes(1)
 	})
+
+	it('label', () => {
+		render(<Button value='button' label='label' />)
+		const button = screen.getByLabelText('label')
+		expect(button).toBeInTheDocument()
+	})
 })
