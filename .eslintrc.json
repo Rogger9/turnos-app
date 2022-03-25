@@ -1,5 +1,9 @@
 {
   "extends": "next/core-web-vitals",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
   "rules": {
     "quotes": [
       "error",
@@ -58,6 +62,13 @@
       "error",
       {
         "beforeColon": false
+      }
+    ],
+    "no-undef": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any"
       }
     ]
   }
