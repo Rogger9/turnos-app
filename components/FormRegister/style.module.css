@@ -46,3 +46,10 @@
 .options:hover {
   background: var(--shadow);
 }
+
+.error {
+  background: var(--red);
+  padding: .2rem 1rem;
+  color: var(--white);
+  border-radius: .2rem;
+}
