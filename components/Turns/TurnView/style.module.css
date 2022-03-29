@@ -1,0 +1,34 @@
+.container {
+  max-width: 30rem;
+  width: 100%;
+  background: var(--white);
+  display: grid;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-radius: .2rem;
+  box-shadow: 0 0 8px var(--shadow) inset;
+  position: relative;
+}
+
+.contrast {
+  color: var(--red);
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  border: 2px solid var(--red);
+  padding: .4rem 1rem;
+}
+
+.btn:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+.bold {
+  font-weight: bold;
+}
