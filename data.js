@@ -1,11 +1,13 @@
 export const data = {
 	1: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 10
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 8
@@ -13,11 +15,13 @@ export const data = {
 	],
 	4: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 9
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 11
@@ -25,6 +29,7 @@ export const data = {
 	],
 	9: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 12
@@ -32,11 +37,13 @@ export const data = {
 	],
 	12: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 9
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 8
@@ -44,11 +51,13 @@ export const data = {
 	],
 	15: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 8
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 12
@@ -56,11 +65,13 @@ export const data = {
 	],
 	17: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 10
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 8
@@ -68,11 +79,13 @@ export const data = {
 	],
 	24: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 8
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 11
@@ -80,11 +93,13 @@ export const data = {
 	],
 	29: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 11
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 12
@@ -92,11 +107,13 @@ export const data = {
 	],
 	30: [
 		{
+			id: 1,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 9
 		},
 		{
+			id: 2,
 			name: 'John',
 			contact: 'correo@correo.com',
 			schedule: 10
