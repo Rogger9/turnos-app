@@ -1,19 +1,12 @@
-import { useState } from 'react'
+import usePages from 'hooks/usePages'
 import Calendar from 'components/Calendar'
 import PageLayout from 'components/PageLayout'
 import Button from 'components/Button'
-import { container } from './style.module.css'
 import ListOfTurns from 'components/Turns/ListOfTurns'
+import { container } from './style.module.css'
 
 export default function Admin () {
-	const [status, setStatus] = useState('idle')
-	const [daySelected, setDaySelected] = useState(null)
-
-	const userDate = e => {
-		setDaySelected(e.target.value)
-		setStatus('idle')
-	}
-	const showSchedules = () => setStatus('schedules')
+	const { daySelected, status, userDate, showSchedules } = usePages()
 
 	return (
 		<PageLayout title='Admin' style={container}>
