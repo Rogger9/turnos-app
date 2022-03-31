@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import TurnView from '.'
 
@@ -22,16 +22,16 @@ describe('TurnView', () => {
 		expect(contact).toBeInTheDocument()
 	})
 
-	it('render route /admin', () => {
+	it('render route /admin', async () => {
 		useRouter.mockImplementationOnce(() => ({ pathname: '/admin' }))
 		render(<TurnView {...data} />)
 
 		const name = screen.getByText(data.name)
 		const contact = screen.getByText(data.contact)
-		const button = screen.getByText('Delete')
+		const button = await screen.findByText('Delete')
 
 		expect(name).toBeInTheDocument()
 		expect(contact).toBeInTheDocument()
-		expect(button).toBeInTheDocument()
+		await waitFor(() => expect(button).toBeInTheDocument())
 	})
 })

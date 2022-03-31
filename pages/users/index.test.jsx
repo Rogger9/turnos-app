@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Users from './'
 
@@ -21,7 +21,7 @@ describe('Users', () => {
 		expect(expected).toBeDisabled()
 	})
 
-	it('render select', () => {
+	it('render select', async () => {
 		const daySelected = screen.getByText('1')
 		fireEvent.click(daySelected)
 
@@ -29,7 +29,7 @@ describe('Users', () => {
 		expect(button).not.toBeDisabled()
 		fireEvent.click(button)
 
-		const form = screen.getByPlaceholderText('Insert your name')
-		expect(form).toBeInTheDocument()
+		const form = await screen.findByPlaceholderText('Insert your name')
+		await waitFor(() => expect(form).toBeInTheDocument())
 	})
 })

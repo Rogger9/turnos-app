@@ -1,6 +1,8 @@
-import Button from 'components/Button'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 import { container, contrast, btn, bold } from './style.module.css'
+
+const Button = dynamic(() => import('components/Button'))
 
 export default function TurnView ({ id, name, contact, schedule, handleClick }) {
 	const { pathname } = useRouter()

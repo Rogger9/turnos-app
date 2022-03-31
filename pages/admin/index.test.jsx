@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Admin from '.'
 
@@ -20,14 +20,14 @@ describe('Admin', () => {
 		expect(button).toBeInTheDocument()
 	})
 
-	it('render list of turns', () => {
+	it('render list of turns', async () => {
 		const day = screen.getByText('1')
 		fireEvent.click(day)
 
 		const button = screen.getByLabelText('See turns')
 		fireEvent.click(button)
 
-		const listOfTurns = screen.getByRole('listbox')
-		expect(listOfTurns).toBeInTheDocument()
+		const listOfTurns = await screen.findByRole('listbox')
+		await waitFor(() => expect(listOfTurns).toBeInTheDocument())
 	})
 })
