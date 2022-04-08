@@ -10,7 +10,7 @@ export default function ListOfTurns ({ daySelected }) {
 	return (
 		<section role='listbox' className={container}>
 			{
-				dataSorted?.map(turn => <TurnView key={turn.id} {...{ ...turn }} handleClick={deleteTurn} />)
+				dataSorted?.map(turn => <TurnView key={turn.id} { ...turn } handleClick={deleteTurn} />)
 			}
 		</section>
 	)

@@ -1,14 +1,12 @@
-import { useState, useEffect } from 'react'
-import { data } from 'data'
+import { useMemo } from 'react'
+import { useData } from 'store'
 
 export function useHandleData (day) {
-	const [dataList, setData] = useState([])
+	const { turnsDay, setTurnsDay, deleteTurn } = useData(({ turnsDay, setTurnsDay, deleteTurn }) => ({ turnsDay, setTurnsDay, deleteTurn }))
 
-	useEffect(() => setData(data[day] ?? []), [day])
+	useMemo(() => setTurnsDay(day), [day, setTurnsDay])
 
-	const dataSorted = dataList?.sort((a, b) => a.schedule - b.schedule)
-
-	const deleteTurn = (id) => setData(dataList.filter(turn => turn.id !== id))
+	const dataSorted = turnsDay?.sort((a, b) => a.schedule - b.schedule)
 
 	return { dataSorted, deleteTurn }
 }

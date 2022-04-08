@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useData } from 'store'
 import Button from 'components/Button'
 import { getScheduleList } from './getSchedulesList'
 import ListSchedules from './ListSchedules'
@@ -8,7 +9,8 @@ import styles from './style.module.css'
 
 export default function FormRegister ({ day }) {
 	const [hour, setHour] = useState(null)
-	const { hoursToShow } = getScheduleList(day)
+	const { turns } = useData(({ turns }) => ({ turns }))
+	const { hoursToShow } = getScheduleList(day, turns)
 	const handleClick = e => setHour(e.target.value)
 
 	return (
