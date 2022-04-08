@@ -20,14 +20,26 @@ describe('Admin', () => {
 		expect(button).toBeInTheDocument()
 	})
 
-	it('render list of turns', async () => {
-		const day = screen.getByText('1')
+	// Necessary mock initial value global state
+	// it('render list of turns', async () => {
+	// 	const day = screen.getByText('1')
+	// 	fireEvent.click(day)
+
+	// 	const button = screen.getByLabelText('See turns')
+	// 	fireEvent.click(button)
+
+	// 	const listOfTurns = await screen.findByRole('listbox')
+	// 	await waitFor(() => expect(listOfTurns).toBeInTheDocument())
+	// })
+
+	it('empty data to show', async () => {
+		const day = screen.getByText('2')
 		fireEvent.click(day)
 
 		const button = screen.getByLabelText('See turns')
 		fireEvent.click(button)
 
-		const listOfTurns = await screen.findByRole('listbox')
-		await waitFor(() => expect(listOfTurns).toBeInTheDocument())
+		const text = await screen.findByText('No turns to show')
+		await waitFor(() => expect(text).toBeInTheDocument())
 	})
 })
