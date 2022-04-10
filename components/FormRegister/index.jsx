@@ -7,9 +7,9 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { validation } from './validations'
 import styles from './style.module.css'
 
-export default function FormRegister ({ day }) {
+export default function FormRegister ({ day, hideSchedules, resetDay }) {
 	const [hour, setHour] = useState(null)
-	const { turns } = useData(({ turns }) => ({ turns }))
+	const { turns, createTurn } = useData(({ turns, createTurn }) => ({ turns, createTurn }))
 	const { hoursToShow } = getScheduleList(day, turns)
 	const handleClick = e => setHour(e.target.value)
 
@@ -17,7 +17,13 @@ export default function FormRegister ({ day }) {
 		<Formik
 			initialValues={{ name: '', email: '' }}
 			validate={validation}
-			onSubmit={({ name, email }) => console.log(name, email)}
+			onSubmit={({ name, email }) => {
+				createTurn(name, email, hour, day)
+				setHour(null)
+				//message success -> 'turn created successfully'
+				hideSchedules()
+				resetDay()
+			}}
 		>
 			{
 				({ errors: { name, email } }) => (
