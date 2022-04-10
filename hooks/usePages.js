@@ -8,8 +8,10 @@ export default function usePages () {
 		setDaySelected(e.target.value)
 		setStatus('idle')
 	}
+	const resetDay = () => setDaySelected(null)
 
 	const showSchedules = () => setStatus('schedules')
+	const hideSchedules = () => setStatus('idle')
 
-	return { status, daySelected, userDate, showSchedules }
+	return { status, daySelected, userDate, resetDay, showSchedules, hideSchedules }
 }
