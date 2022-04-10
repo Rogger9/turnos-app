@@ -12,14 +12,14 @@ const FormRegister = dynamic(
 )
 
 export default function Users () {
-	const { daySelected, status, userDate, showSchedules } = usePages()
+	const { daySelected, status, userDate, resetDay, showSchedules, hideSchedules } = usePages()
 
 	return (
 		<PageLayout title='Users' style={container}>
 			<h3>Select a day to see the available schedules</h3>
 			<Calendar handleClick={userDate} daySelected={daySelected} />
 			<Button value='See available schedules' isDisable={!daySelected} handleClick={showSchedules} label='See available schedules' />
-			{status === 'schedules' && <FormRegister day={daySelected} />}
+			{status === 'schedules' && <FormRegister day={daySelected} {...{ hideSchedules, resetDay }} />}
 		</PageLayout>
 	)
 }
