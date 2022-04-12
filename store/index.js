@@ -14,6 +14,17 @@ export const useData = create(
 			return {
 				turnsDay: filteredTurns
 			}
+		}),
+		createTurn: (name, email, hour, day) => set(({ turns }) => {
+			const newTurn = {
+				id: Math.random().toString(36).substring(2, 8),
+				name,
+				contact: email,
+				schedule: Number(hour)
+			}
+
+			const addTurn = [...turns[day], newTurn]
+			turns[day] = addTurn
 		})
 	})
 )
